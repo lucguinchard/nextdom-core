@@ -68,8 +68,9 @@ $(window).resize(function () {
   initRowOverflow();
 
   // Close left menu if small resolution comming
-  if ($(window).width() < 768) {
-    $('body').removeClass("sidebar-collapse");
+  var body = document.getElementsByTagName('body')[0];
+  if (window.innerWidth < 768 && !body.classList.contains('sidebar-collapse')) {
+    body.classList.add('sidebar-collapse');
   }
 
   // Left menu resize
